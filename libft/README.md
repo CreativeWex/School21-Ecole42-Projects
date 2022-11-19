@@ -1,4 +1,4 @@
-# Libft + bonus part ♅
+# Libft
 
 >Your very first own library
 

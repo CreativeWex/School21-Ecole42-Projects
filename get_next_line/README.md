@@ -1,4 +1,4 @@
-# get_next_line ♅
+# get_next_line
 
 >Reading a line on a fd is way too tedious
 
@@ -15,6 +15,7 @@ read from a file descriptor.
 - ``char			*buff;`` - final string, cleared of garbage, to be printed;
 <br>
 <br>
+
 ## char	*ft_trashed_readline(int fd, char *str)
 
 1) In the loop it reads packs of characters by BUFFER_SIZE in a piece;
