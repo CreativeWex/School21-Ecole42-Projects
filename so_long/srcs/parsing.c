@@ -1,0 +1,94 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jnidorin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/15 18:13:01 by jnidorin          #+#    #+#             */
+/*   Updated: 2022/04/15 18:13:06 by jnidorin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../includes/so_long.h"
+
+char	*get_next_line(int fd, int *f)
+{
+	char	*str;
+	char	buf[2];
+	int		byte;
+
+	str = ft_calloc(1, 1);
+	if (!str)
+		exit(0);
+	byte = 1;
+	while (byte > 0)
+	{
+		byte = read(fd, buf, 1);
+		if (byte == -1)
+			ft_error("Error reading file!\n");
+		if (buf[0] == '\n' || byte == 0)
+			break ;
+		if (!(ft_strchr("10CPE", buf[0])))
+			ft_error("Wrong symbols!\n");
+		str = ft_strjoin(str, buf);
+	}
+	if (byte == 0)
+		*f = 0;
+	return (str);
+}
+
+int	ft_count_map_lines(char *file)
+{
+	int		count_line;
+	int		fd;
+	int		byte;
+	char	buf[2];
+
+	fd = open(file, O_RDONLY);
+	count_line = 0;
+	byte = 1;
+	while (byte > 0)
+	{
+		byte = read(fd, buf, 1);
+		if (buf[0] == '\n')
+			count_line++;
+	}
+	if (byte == -1)
+		ft_error("Error reading file\n");
+	close(fd);
+	return (count_line);
+}
+
+char	**ft_parsing(char *file)
+{
+	int		count_line;
+	int		fd;
+	char	**map;
+	int		f;
+	int		i;
+
+	count_line = ft_count_map_lines(file);
+	f = 1;
+	fd = open(file, O_RDONLY);
+	map = malloc(sizeof(char **) * (count_line + 1));
+	if (!map)
+		ft_error("Memory Error\n");
+	i = -1;
+	while (f)
+		map[++i] = get_next_line(fd, &f);
+	map[++i] = NULL;
+	close(fd);
+	return (map);
+}
+
+void	ft_put_images_to_window(t_game *game, int i, int j)
+{
+	while (i < game->width)
+	{
+		j = 0;
+		while (j < game->height)
+			game->map[j++][i] = '1';
+		i++;
+	}
+}

@@ -13,3 +13,5 @@
 6. [ft_printf](https://github.com/CreativeWex/School21-Ecole42-Projects/tree/main/learning%20c/ft_printf) - реализация функции printf языка С, работа с функциями с неопределенным количеством аргументов.
 
 7. [get_next_line](https://github.com/CreativeWex/School21-Ecole42-Projects/tree/main/learning%20c/get_next_line) - реализация функции getline языка С.
+
+<img src="assets/holyGraph.png">

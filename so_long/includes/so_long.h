@@ -1,0 +1,89 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jnidorin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/15 18:10:28 by jnidorin          #+#    #+#             */
+/*   Updated: 2022/04/15 18:10:52 by jnidorin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef SO_LONG_H
+# define SO_LONG_H
+
+# include <stdio.h>
+# include <fcntl.h>
+# include <stdlib.h>
+# include "../libft/libft.h"
+# include "../mlx/mlx.h"
+
+# define IMGSIZE 40
+
+typedef struct s_game
+{
+	char	**map;
+	int		height;
+	int		width;
+	void	*window;
+	int		collect;
+	int		player;
+	int		pos_x;
+	int		pos_y;
+	int		enemies;
+	int		space;
+	void	*enemy;
+	void	*enemy2;
+	void	*ground;
+	void	*wall;
+	void	*exit_img;
+	void	*coll_img;
+	void	*coll2_img;
+	void	*coll3_img;
+	void	*coll4_img;
+	void	*p_u_img;
+	void	*p_d_img;
+	void	*p_l_img;
+	void	*p_r_img;
+	int		exit;
+	int		moves;
+	int		winner;
+	int		ter_x;
+	int		ter_y;
+	void	*mlx;
+}	t_game;
+
+// so_long
+int		main(int ac, char **av);
+// ft_error
+void	ft_error(const char *text);
+int		ft_close_game(void);
+void	ft_check_enemy(t_game *game);
+void	ft_win(t_game *game, int flag);
+// ft_parsing
+char	**ft_parsing(char *file);
+// ft_map_validation
+void	ft_map_validation(t_game *game);
+// ft_start
+void	ft_start(t_game *game);
+void	ft_put_enemy(t_game *game);
+// ft_put_images
+void	ft_put_images(t_game *game, int i, int j);
+void	ft_put_image_to_window(t_game *game, char c, int x, int y);
+void	ft_put_images_to_window(t_game *game, int i, int j);
+int		ft_animation(t_game *game);
+void	ft_check_winner(t_game *game, int s_x, int s_y, char *s);
+// ft_moves
+void	ft_move_up(t_game *game);
+void	ft_move_down(t_game *game);
+void	ft_move_left(t_game *game);
+void	ft_move_right(t_game *game);
+// ft_render
+int		ft_render_img(t_game *game);
+// ft_enemy
+int		ft_move_enemy(t_game *game);
+void	ft_move_enemy_left(t_game *game, int *f);
+void	ft_move_enemy_right(t_game *game, int *f);
+int		ft_animation_2(t_game *game);
+#endif
