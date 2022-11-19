@@ -8,10 +8,12 @@
 
 4. [born_2_be_root](https://github.com/CreativeWex/School21-Ecole42-Projects/tree/main/born_2_be_root) - Настройка SSH и UFW firewall для удаленного подключения пользователей. Создание и настройка политики паролей. С помощью демона Cron и языка Bash написан скрипт, отправляющий системные характеристики пользователям с заданным промежутком времени.
 
-5. [libft](https://github.com/CreativeWex/School21-Ecole42-Projects/tree/main/learning%20c/libft) - реализация библеотеки стандартных функций языка С.
+5. [cppModules](https://github.com/CreativeWex/School21-Ecole42-Projects/tree/main/cppModules) - изучение ООП на языке С++.
 
-6. [ft_printf](https://github.com/CreativeWex/School21-Ecole42-Projects/tree/main/learning%20c/ft_printf) - реализация функции printf языка С, работа с функциями с неопределенным количеством аргументов.
+6. [libft](https://github.com/CreativeWex/School21-Ecole42-Projects/tree/main/learning%20c/libft) - реализация библеотеки стандартных функций языка С.
 
-7. [get_next_line](https://github.com/CreativeWex/School21-Ecole42-Projects/tree/main/learning%20c/get_next_line) - реализация функции getline языка С.
+7. [ft_printf](https://github.com/CreativeWex/School21-Ecole42-Projects/tree/main/learning%20c/ft_printf) - реализация функции printf языка С, работа с функциями с неопределенным количеством аргументов.
+
+8. [get_next_line](https://github.com/CreativeWex/School21-Ecole42-Projects/tree/main/learning%20c/get_next_line) - реализация функции getline языка С.
 
 <img src="assets/holyGraph.png">
