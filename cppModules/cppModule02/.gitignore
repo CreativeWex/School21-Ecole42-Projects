@@ -1,0 +1,11 @@
+ex00/ ex00
+ex00/ *.o
+
+ex01/ ex01
+ex01/ *.o
+
+ex02/ ex02
+ex02/ *.o
+
+ex03/ ex03
+ex03/ *.o
